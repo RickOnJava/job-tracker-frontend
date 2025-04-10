@@ -1,12 +1,59 @@
-# React + Vite
+# 🎯 Student Job Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web application that helps students track their job applications with ease. Built with the MERN stack (MongoDB, Express.js, React, Node.js) and deployed using Vercel and Render.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔧 Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend:** React (Vite + Hooks), Redux Toolkit, TailwindCSS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB Atlas
+- **Authentication:** JWT-based secure login/register
+- **Deployment:** Vercel (frontend), Render (backend)
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Live Demo
+
+🌐 Frontend: [https://student-job-tracker-rho.vercel.app/] 
+
+---
+
+## ✨ Features
+
+- 🔐 **User Authentication** (Register / Login)
+- 📝 **Add Job Applications**  
+  - Fields: Company, Role, Status, Date, Link
+- 📋 **List All Applications** with filters
+  - Filter by **status** or **date range**
+- 🔁 **Update Job Status**
+- ❌ **Delete Job Application**
+- 📊 **Dashboard Stats**
+  - Automatically updates counts of Applied / Interview / Offer / Rejected
+- 🎨 Beautiful, responsive UI with animations
+
+---
+
+## 🛠️ Installation (Local)
+
+```bash
+# Clone frontend and backend repos
+git clone https://github.com/RickOnJava/job-tracker-frontend.git
+git clone https://github.com/RickOnJava/job-tracker-backend.git
+
+# Backend setup
+cd job-tracker-backend
+npm install
+create .env file with:
+  MONGO_URI=your_mongodb_uri
+  JWT_SECRET=your_secret
+  FRONTEND_URL=http://localhost:5173
+npm start
+
+# Frontend setup
+cd ../job-tracker-frontend
+npm install
+create .env file with:
+  VITE_BACKEND_URL=http://localhost:4000/api
+npm run dev
