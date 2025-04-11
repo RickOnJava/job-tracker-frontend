@@ -46,6 +46,7 @@ export function JobForm({ addAllJob, closeForm }) {
       if (res.data.success) {
         dispatch(addJob(res.data.job));
         toast.success(res.data.message);
+        return res.data.job; // Return the job data
       }
     } catch (err) {
       toast.error(err.response.data.message);
@@ -59,14 +60,17 @@ export function JobForm({ addAllJob, closeForm }) {
     if (!company || !role || !date) {
       return;
     }
-    await formSubmit();
-    addAllJob({
-      company,
-      role,
-      status,
-      date,
-      link,
-    });
+    const jobData = await formSubmit();
+    if(jobData) {
+      addAllJob({
+        company,
+        role,
+        status,
+        date,
+        link,
+        _id: jobData._id, // Use the _id from the job data
+      });
+    }
   };
 
   return (

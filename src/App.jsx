@@ -2,8 +2,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { useSelector } from 'react-redux';
 import Login from './components/auth_pages/Login';
 import Register from './components/auth_pages/Register';
-import AddJobForm from './components/AddJobForm';
-import EditJobForm from './components/EditJobForm';
 import Dashboard from './components/dashboard/Dashboard';
 
 const PrivateRoute = ({ children }) => {
